@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Module01Exercise01.UserPage"
+             xmlns:local="clr-namespace:Module01Exercise01"
+             
+             BackgroundColor="{DynamicResource DynamicBackgroundColor}"
+             
+             Title="UserPage">
+
+    <ContentPage.Resources>
+        <x:String x:Key="DynamicUsername">Jan Pingul</x:String>
+        <x:String x:Key="DynamicEmail">pingul.jangabrielle@auf.edu.ph</x:String>
+        <x:String x:Key="DynamicBio">I am a 4th year student in Angeles University Foundation.</x:String>
+
+        <Color x:Key="DynamicBackgroundColor">Gray</Color>
+
+        <x:String x:Key="AreaIndicatorFontSize">20</x:String>
+        <Color x:Key="AreaIndicatorTextColor">Navy</Color>
+
+        <x:String x:Key="WelcomeMessageFontSize">30</x:String>
+        <Color x:Key="WelcomeMessageColor">Black</Color>
+    </ContentPage.Resources>
+    <VerticalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+            <Button BackgroundColor="Gray"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    HeightRequest="10"
+                    WidthRequest="10"
+                    Clicked="Event_ChangeBackground_Gray"/>
+            
+            <Button BackgroundColor="LightGray"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    HeightRequest="10"
+                    WidthRequest="10"
+                    Clicked="Event_ChangeBackground_LightGray"/>
+
+            <Button BackgroundColor="LightPink"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    HeightRequest="10"
+                    WidthRequest="10"
+                    Clicked="Event_ChangeBackground_LightPink"/>
+        </HorizontalStackLayout>
+
+        <Label Text="{local:WelcomeMessage}"
+               FontSize="{StaticResource WelcomeMessageFontSize}"
+               TextColor="{StaticResource WelcomeMessageColor}"
+               HorizontalOptions="CenterAndExpand"
+               Margin="20"/>
+
+        <Label Text="Name"
+               FontSize="{StaticResource AreaIndicatorFontSize}"
+               TextColor="{StaticResource AreaIndicatorTextColor}"/>
+        <Label x:Name="DisplayedName"
+               Text="{DynamicResource DynamicUsername}"/>
+        <Entry x:Name="EntryofName"
+               Placeholder="Name"
+               Text="{Binding Text, Source={x:Reference DisplayedName}}"/>
+
+        <Label Text="Email"
+               FontSize="{StaticResource AreaIndicatorFontSize}"
+               TextColor="{StaticResource AreaIndicatorTextColor}"/>
+        <Label x:Name="DisplayedEmail"
+               Text="{DynamicResource DynamicEmail}"/>
+        <Entry x:Name="EntryofEmail"
+               Placeholder="Email"
+               Text="{Binding Text, Source={x:Reference DisplayedEmail}}"/>
+
+        <Label Text="Date of Birth"
+               FontSize="{StaticResource AreaIndicatorFontSize}"
+               TextColor="{StaticResource AreaIndicatorTextColor}"/>
+        <Label x:Name="DisplayedDoB"
+               Text="{Binding Date, Source={x:Reference PickerDateofBirth}}"/>
+        <DatePicker x:Name="PickerDateofBirth"
+                    Format="MM-dd-YYYY"
+                    Date="05/17/2002"/>
+
+        <Label Text="Bio"
+               FontSize="{StaticResource AreaIndicatorFontSize}"
+               TextColor="{StaticResource AreaIndicatorTextColor}"/>
+        <Label x:Name="DisplayedBio"
+                Text="{DynamicResource DynamicBio}"/>
+        <Editor x:Name="BioEditor"
+                Placeholder="Your bio goes here."
+                Text="{Binding Text, Source={x:Reference DisplayedBio}}"/>
+
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+            <Button x:Name="EditButton"
+                    Text="Edit"
+                    Clicked="Event_Edit"/>
+
+            <Button x:Name="CancelButton"
+                    Text="Cancel"
+                    Clicked="Event_Cancel"
+                    IsVisible="false"/>
+
+            <Button x:Name="SaveButton"
+                    Text="Save"
+                    Clicked="Event_Save"
+                    IsVisible="false"/>
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>
