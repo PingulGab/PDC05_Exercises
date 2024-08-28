@@ -32924,11 +32924,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\Module02Activity01\\Module02Activity01.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\PDC05_Pingul\\Module02Activity01\\Module02Activity01.csproj",
       "projectName": "Module02Activity01",
-      "projectPath": "C:\\Users\\User\\source\\repos\\Module02Activity01\\Module02Activity01.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\PDC05_Pingul\\Module02Activity01\\Module02Activity01.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\Module02Activity01\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\PDC05_Pingul\\Module02Activity01\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
