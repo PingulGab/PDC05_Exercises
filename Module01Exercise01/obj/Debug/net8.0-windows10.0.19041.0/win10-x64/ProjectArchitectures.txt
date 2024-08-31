@@ -1,1 +1,1 @@
-C:\bsit 4a repo\Module01Exercise01\Module01Exercise01.csproj;x64
+C:\repos\PDC05\PDC05_Exercises\Module01Exercise01\Module01Exercise01.csproj;x64
